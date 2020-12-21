@@ -13,11 +13,7 @@ except ImportError:
 
 from . import static
 
-# def logmaker():
-#     path = os.path.join("home", "debmalya", "pOrgz", "logs.log")
-#     return logging.FileHandler(path)
-
-def getLoggerName(logLevel : int):
+def __getLoggerName__(logLevel : int):
     """Get the Name of the logger, as defiend in YAML based on `logLevel`"""
 
     return {
@@ -28,7 +24,7 @@ def getLoggerName(logLevel : int):
         logging.WARNING  : "warnLogger",
     }.get(logLevel, __name__)
 
-def getLogger(logLevel : int = logging.INFO):
+def __getLogger__(logLevel : int = logging.INFO):
     """Defination of a Logger-Functionality - can be used to Track User Sessions and Login Information"""
 
     # https://stackoverflow.com/questions/6028000/
@@ -38,10 +34,11 @@ def getLogger(logLevel : int = logging.INFO):
     # define logger using PyYAML
     config = yaml.safe_load(loggerFile.read())
     logging.config.dictConfig(config)
-    # logging.basicConfig(level = logLevel)
 
-    return logging.getLogger(getLoggerName(logLevel))
-    # return logging.getLogger(loggerName)
-    # return logging.basicConfig(level = logLevel)
+    return logging.getLogger(__getLoggerName__(logLevel))
 
-# logger = getLogger()
+infoLogger     = __getLogger__(logLevel = logging.INFO)
+errorLogger    = __getLogger__(logLevel = logging.ERROR)
+debugLogger    = __getLogger__(logLevel = logging.DEBUG)
+criticalLogger = __getLogger__(logLevel = logging.CRITICAL)
+warnLogger     = __getLogger__(logLevel = logging.WARNING)

@@ -1,24 +1,24 @@
 # -*- encoding: utf-8 -*-
 
 import time
+import flask_restful
 
-from uuid import uuid4
-from flask_restful import Resource
+from .. import *
 
-from .. import getLogger
-
-class MyController(Resource):
+class MyController(flask_restful.Resource):
     """A Controller defined for DEMO Purpose, returns static JSONs"""
-
-    def __init__(self):
-        self.logger = getLogger()
 
     def get(self):
         """Returns a Static JSON representing a GET requests"""
 
-        self.logger.info("GET, from MyController")
-        return {
-            "ID"      : str(uuid4()),
-            "time"    : str(time.ctime()),
-            "message" : "JSON Static Message"
-        }
+        infoLogger.info("GET, from MyController - this is a INFO Message")
+
+        try:
+            return 1 / 0 # obviously this will fail!
+        except ZeroDivisionError:
+            # https://stackoverflow.com/questions/5191830
+            errorLogger.exception("ERROR Message, implemented forcefully")
+            return {
+                "time"    : str(time.ctime()),
+                "message" : "Encountered Error",
+            }

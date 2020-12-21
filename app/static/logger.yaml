@@ -79,30 +79,21 @@ loggers : # all other user defined loggers
     propogate : no
 
   errorLogger :
-    level     : INFO
+    level     : ERROR
     handlers  : [console, errorHandler]
     propogate : no
 
   debugLogger :
-    level     : INFO
+    level     : DEBUG
     handlers  : [console, debugHandler]
     propogate : no
 
   criticalLogger :
-    level     : INFO
+    level     : CRITICAL
     handlers  : [console,criticalHandler]
     propogate : no
 
   warnLogger :
-    level     : INFO
+    level     : WARNING
     handlers  : [console, warnHandler]
     propogate : no
-
-  # <module> :
-  #   level     : INFO
-  #   handlers  : [console, infoHandler, errorHandler, debugHandler, criticalHandler, warnHandler]
-  #   propogate : no
-  # <module.x> :
-  #   level     : DEBUG
-  #   handlers  : [infoHandler, errorHandler, debugHandler, criticalHandler, warnHandler]
-  #   propogate : no
