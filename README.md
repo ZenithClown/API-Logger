@@ -37,3 +37,11 @@ Flask by default uses the `logging` module for logging and debugging into consol
 ```bash
 loggerName.loggerLevel("<log message>")
 ```
+
+## Example Log(s)
+
+**INFO Log**
+![INFO-Log](./assets/infoLog.png)
+
+**ERROR Log**
+![ERROR-Log](./assets/errorLog.png)
