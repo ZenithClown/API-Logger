@@ -104,13 +104,13 @@ celerybeat.pid
 *.sage.py
 
 # Environments - should be excluded from production/development/as required
-# .env
-# .venv
-# env/
-# venv/
-# ENV/
-# env.bak/
-# venv.bak/
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
 # Spyder project settings
 .spyderproject
@@ -129,6 +129,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# _test_ is for internal testing
-_test_/
