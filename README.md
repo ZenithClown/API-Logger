@@ -1,7 +1,14 @@
 <div align="center">
-
-<img src = "./assets/logo.png"/>
-<h1 align = "center">REST API Template Design</h1>
+  
+  <table style="width:100%; border-collapse: collapse; border: none;">
+    <tr>
+      <th><a href = "https://zenithclown.github.io/minimalist-resume/"><img height = "175" width = "275" src = "./asstes/logIcon.png"></a></th>
+      
+      <th>
+        <h1 align = "center">REST API with Logging Functionalities</h1>
+      </th>
+    </tr>
+  </table>
 
 </div>
 
