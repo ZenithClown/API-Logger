@@ -3,7 +3,7 @@
 
 import yaml
 import logging
-from logging.config import dictConfig
+import logging.config
 
 try:
     import importlib.resources as pkg_resources
@@ -17,7 +17,18 @@ from . import static
 #     path = os.path.join("home", "debmalya", "pOrgz", "logs.log")
 #     return logging.FileHandler(path)
 
-def getLogger(loggerName : str = __name__):
+def getLoggerName(logLevel : int):
+    """Get the Name of the logger, as defiend in YAML based on `logLevel`"""
+
+    return {
+        logging.INFO     : "infoLogger",
+        logging.ERROR    : "errorLogger",
+        logging.DEBUG    : "debugLogger",
+        logging.CRITICAL : "criticalLogger",
+        logging.WARNING  : "warnLogger",
+    }.get(logLevel, __name__)
+
+def getLogger(logLevel : int = logging.INFO):
     """Defination of a Logger-Functionality - can be used to Track User Sessions and Login Information"""
 
     # https://stackoverflow.com/questions/6028000/
@@ -26,8 +37,11 @@ def getLogger(loggerName : str = __name__):
 
     # define logger using PyYAML
     config = yaml.safe_load(loggerFile.read())
-    dictConfig(config)
+    logging.config.dictConfig(config)
+    # logging.basicConfig(level = logLevel)
 
-    return logging.getLogger(loggerName)
+    return logging.getLogger(getLoggerName(logLevel))
+    # return logging.getLogger(loggerName)
+    # return logging.basicConfig(level = logLevel)
 
 # logger = getLogger()

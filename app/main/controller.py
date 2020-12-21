@@ -11,7 +11,7 @@ class MyController(Resource):
     """A Controller defined for DEMO Purpose, returns static JSONs"""
 
     def __init__(self):
-        self.logger = getLogger("INFOLogger-Console")
+        self.logger = getLogger()
 
     def get(self):
         """Returns a Static JSON representing a GET requests"""
