@@ -2,8 +2,7 @@
   
   <table style="width:100%; border-collapse: collapse; border: none;">
     <tr>
-      <th><a href = "https://zenithclown.github.io/minimalist-resume/"><img height = "175" width = "275" src = "./asstes/logIcon.png"></a></th>
-      
+      <th><a href = "https://zenithclown.github.io/minimalist-resume/"><img height = "128" width = "128" src = "./assets/logIcon.png"></a></th>
       <th>
         <h1 align = "center">REST API with Logging Functionalities</h1>
       </th>
