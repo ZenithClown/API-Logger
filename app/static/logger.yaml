@@ -2,7 +2,7 @@
 # https://gist.github.com/kingspp/9451566a5555fb022215ca2b7b802f19
 
 version : 1
-disable_existing_loggers : false # https://docs.python.org/3/library/logging.config.html
+disable_existing_loggers : true # https://docs.python.org/3/library/logging.config.html
 
 formatters :
 
@@ -73,27 +73,37 @@ root : # root logger, access by logging.getLogger(__name__)
 
 loggers : # all other user defined loggers
 
-  infoLogger :
+  # infoLogger :
+  #   level     : INFO
+  #   handlers  : [console, infoHandler]
+  #   propogate : no
+
+  # errorLogger :
+  #   level     : ERROR
+  #   handlers  : [console, errorHandler]
+  #   propogate : no
+
+  # debugLogger :
+  #   level     : DEBUG
+  #   handlers  : [console, debugHandler]
+  #   propogate : no
+
+  # criticalLogger :
+  #   level     : CRITICAL
+  #   handlers  : [console,criticalHandler]
+  #   propogate : no
+
+  # warnLogger :
+  #   level     : WARNING
+  #   handlers  : [console, warnHandler]
+  #   propogate : no
+
+  <module> :
     level     : INFO
-    handlers  : [console, infoHandler]
+    handlers  : [console, infoHandler, errorHandler, debugHandler, criticalHandler, warnHandler]
     propogate : no
 
-  errorLogger :
-    level     : ERROR
-    handlers  : [console, errorHandler]
-    propogate : no
-
-  debugLogger :
-    level     : DEBUG
-    handlers  : [console, debugHandler]
-    propogate : no
-
-  criticalLogger :
-    level     : CRITICAL
-    handlers  : [console,criticalHandler]
-    propogate : no
-
-  warnLogger :
-    level     : WARNING
-    handlers  : [console, warnHandler]
+  <module.x> :
+    level     : INFO
+    handlers  : [infoHandler, errorHandler, debugHandler, criticalHandler, warnHandler]
     propogate : no

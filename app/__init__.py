@@ -35,10 +35,13 @@ def __getLogger__(logLevel : int = logging.INFO):
     config = yaml.safe_load(loggerFile.read())
     logging.config.dictConfig(config)
 
-    return logging.getLogger(__getLoggerName__(logLevel))
+    logger = logging.getLogger(__name__)
+    return logger # https://stackoverflow.com/questions/7507825
 
-infoLogger     = __getLogger__(logLevel = logging.INFO)
-errorLogger    = __getLogger__(logLevel = logging.ERROR)
-debugLogger    = __getLogger__(logLevel = logging.DEBUG)
-criticalLogger = __getLogger__(logLevel = logging.CRITICAL)
-warnLogger     = __getLogger__(logLevel = logging.WARNING)
+#     return logging.getLogger(__getLoggerName__(logLevel))
+
+# infoLogger     = __getLogger__(logLevel = logging.INFO)
+# errorLogger    = __getLogger__(logLevel = logging.ERROR)
+# debugLogger    = __getLogger__(logLevel = logging.DEBUG)
+# criticalLogger = __getLogger__(logLevel = logging.CRITICAL)
+# warnLogger     = __getLogger__(logLevel = logging.WARNING)
