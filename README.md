@@ -15,7 +15,7 @@
 
 </div>
 
-<p align="justify">A simple <b>REST API</b> design, built using <code>flask_restful</code>, implemented with advanced <code>logging</code> functionalities. For demonstration purpose, there is one <code>controller</code> which raises a <code>ZeroDivisionError</code> for the API accesible at <code>localhost:5000/home</code>.</p>
+<p align="justify">A simple <b>REST API</b> design, built using <code>flask_restful</code>, implemented with advanced <code>logging</code> functionalities. For demonstration purpose, there is one <code>controller</code> which raises a <code>ZeroDivisionError</code> for the API accesible at <code>localhost:5000/home</code>. <b>CODE Archived:</b> The repository is archived, and no longer maintained by author. Please check <a href = "https://github.com/ZenithClown/flask-docker-template">flask-docker-template</a> for an updated and robust functionalities.</p>
 
 ## Setup
 
